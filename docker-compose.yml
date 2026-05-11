@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: refynce-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: refynce
+      POSTGRES_USER: refynce
+      POSTGRES_PASSWORD: refynce
+    ports:
+      - "5432:5432"
+    volumes:
+      - refynce_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U refynce -d refynce"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  refynce_postgres_data:
