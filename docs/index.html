@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#68724e">
+  <meta
+    name="description"
+    content="Convite digital de casamento de Daniel e Marcela."
+  >
+  <title>Marcela &amp; Daniel | 16.01.2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Birthstone&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Mea+Culpa&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="ambient-glow ambient-glow--top" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow--bottom" aria-hidden="true"></div>
+
+    <section class="opening" id="opening" aria-label="Abrir convite">
+      <button
+        class="opening__envelope"
+        id="openInvitation"
+        type="button"
+        aria-describedby="openingHint"
+      >
+        <span class="opening__envelope-shadow" aria-hidden="true"></span>
+        <span class="opening__envelope-back" aria-hidden="true"></span>
+        <span class="opening__envelope-liner" aria-hidden="true"></span>
+        <span class="opening__sheet" aria-hidden="true">
+          <span class="opening__sheet-inner">
+            <span
+              class="opening__sheet-monogram"
+              id="coverMonogramPreview"
+              aria-hidden="true"
+            ></span>
+          </span>
+        </span>
+        <span class="opening__envelope-pocket" aria-hidden="true"></span>
+        <span class="opening__envelope-flap opening__envelope-flap--top" aria-hidden="true"></span>
+        <span class="opening__seal" aria-hidden="true">
+          <span class="opening__seal-core">
+            <img
+              class="opening__seal-monogram"
+              id="coverMonogramImage"
+              src="./assets/images/monograma-novo-clean.png"
+              alt=""
+            >
+          </span>
+        </span>
+        <span class="opening__envelope-flap opening__envelope-flap--left" aria-hidden="true"></span>
+        <span class="opening__envelope-flap opening__envelope-flap--right" aria-hidden="true"></span>
+        <span class="opening__copy">
+          <span class="opening__hint" id="openingHint">Clique</span>
+        </span>
+      </button>
+    </section>
+
+    <main class="invitation" id="invitation" aria-labelledby="coupleNames">
+      <article class="invitation-card">
+        <div class="invitation-card__visual" aria-hidden="true">
+          <img
+            class="invitation-card__pier-image"
+            id="heroImage"
+            src="./assets/images/pier31.png"
+            alt=""
+          >
+          <div class="invitation-card__overlay"></div>
+        </div>
+
+        <div class="invitation-card__content">
+          <h1 class="invitation-card__names" id="coupleNames" aria-label="Marcela e Daniel"><span class="invitation-card__name-line">Marcela</span><span class="invitation-card__name-line invitation-card__name-line--ampersand">&amp;</span><span class="invitation-card__name-line">Daniel</span></h1>
+
+          <p class="invitation-card__message" id="supportingText">
+            Com alegria, convidamos você para celebrar conosco o nosso casamento..
+          </p>
+
+          <div class="invitation-card__hero-media" aria-label="Identidade visual do casal">
+            <img
+              class="invitation-card__couple-image"
+              id="coupleImage"
+              src="./assets/images/casal-clean.png"
+              alt=""
+            >
+          </div>
+
+          <div class="invitation-card__countdown" aria-live="polite">
+            <p class="invitation-card__countdown-label">Contagem regressiva</p>
+            <div class="invitation-card__countdown-ticker" id="countdownValue">
+              <span class="invitation-card__countdown-part">
+                <strong class="invitation-card__countdown-number" id="countdownDays">000</strong>
+                <span class="invitation-card__countdown-unit">dias</span>
+              </span>
+              <span class="invitation-card__countdown-part">
+                <strong class="invitation-card__countdown-number" id="countdownHours">00</strong>
+                <span class="invitation-card__countdown-unit">horas</span>
+              </span>
+              <span class="invitation-card__countdown-part">
+                <strong class="invitation-card__countdown-number" id="countdownMinutes">00</strong>
+                <span class="invitation-card__countdown-unit">min</span>
+              </span>
+              <span class="invitation-card__countdown-part">
+                <strong class="invitation-card__countdown-number" id="countdownSeconds">00</strong>
+                <span class="invitation-card__countdown-unit">seg</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="invitation-card__footer-group">
+            <div class="details-grid" aria-label="Informações do casamento">
+              <section class="detail-card detail-card--date-time" aria-labelledby="dateTitle">
+                <p class="detail-card__label" id="dateTitle">Data e Horário</p>
+                <p class="detail-card__value" id="dateValue">16.01.2027</p>
+                <p class="detail-card__support" id="timeValue">15h</p>
+              </section>
+
+              <a
+                class="detail-card detail-card--location detail-card--link"
+                id="locationLink"
+                href="https://maps.google.com/?q=R.%20Tr%C3%AAs%2C%2031%20-%20Barra%20de%20Jangada"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-labelledby="locationTitle"
+              >
+                <p class="detail-card__label" id="locationTitle">Local</p>
+                <p class="detail-card__value" id="venueValue">Pier 31</p>
+                <p class="detail-card__support" id="locationValue">R. Três, 31, Barra de Jangada, Jaboatão dos Guararapes</p>
+              </a>
+            </div>
+
+            <div class="actions" aria-label="Ações do convite">
+              <a
+                class="button button--primary"
+                id="giftsLink"
+                href="https://www.daniel-e-marcela.com.br/#/presentes"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lista de Presentes
+              </a>
+              <a
+                class="button button--tertiary"
+                id="mapsLink"
+                href="https://maps.google.com/?q=R.%20Tr%C3%AAs%2C%2031%2C%20Barra%20de%20Jangada%2C%20Jaboat%C3%A3o%20dos%20Guararapes"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver no Google Maps
+              </a>
+              <a
+                class="button button--tertiary"
+                id="officialSiteLink"
+                href="https://www.daniel-e-marcela.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Site Oficial
+              </a>
+              <a
+                class="button button--secondary"
+                id="rsvpLink"
+                href="https://www.daniel-e-marcela.com.br/#/rsvp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Confirmar Presença
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>
