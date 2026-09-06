@@ -1183,22 +1183,56 @@ body::before {
 
 @media (max-width: 600px) and (min-height: 860px) {
   .invitation {
-    height: calc(100dvh - 24px);
-    min-height: 0;
+    display: flex;
+    justify-content: center;
     align-items: stretch;
+    height: calc(100dvh - 24px);
+    min-height: calc(100dvh - 24px);
+    width: 100%;
+  }
+
+  .is-ready .invitation {
+    display: flex;
+  }
+
+  .invitation > * {
+    width: 100%;
+    max-width: 620px;
   }
 
   .invitation-card {
-    height: calc(100dvh - 24px);
+    height: auto;
+    min-height: calc(100dvh - 24px);
+    max-height: none;
+  }
+
+  .invitation-card__content {
+    min-height: 100%;
+    height: 100%;
+    padding: 10px 12px 14px;
+  }
+
+  .invitation-card__footer-group {
+    margin-top: auto !important;
+    padding-bottom: 2px;
+    gap: 6px;
+  }
+
+  .actions {
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .details-grid {
+    gap: 6px;
+  }
+
+  .button {
+    min-height: 38px;
   }
 
   .invitation-card__visual {
     height: clamp(148px, 23dvh, 188px);
-  }
-
-  .invitation-card__content {
-    height: 100%;
-    padding: 10px 12px 12px;
   }
 
   .invitation-card__hero-media {
@@ -1209,19 +1243,16 @@ body::before {
     margin-top: 4px;
     margin-bottom: 2px;
   }
+}
 
-  .invitation-card__footer-group {
-    margin-top: auto !important;
-    gap: 6px;
+@media (max-width: 600px) and (min-height: 860px) and (-webkit-touch-callout: none) {
+  .invitation,
+  .invitation-card {
+    min-height: calc(100vh - 24px);
   }
 
-  .details-grid {
-    gap: 6px;
-  }
-
-  .actions {
-    gap: 6px;
-    margin-top: 4px;
+  .invitation-card__content {
+    min-height: calc(100vh - 24px);
   }
 }
 
