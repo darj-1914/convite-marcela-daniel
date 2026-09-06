@@ -606,7 +606,7 @@ body::before {
 }
 
 .invitation-card__names {
-  margin: 0.12em 0 0.22em;
+  margin: 0 0 0.22em;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -622,21 +622,19 @@ body::before {
   position: relative;
   z-index: 3;
   overflow: visible;
-  padding-top: 0.24em;
+  transform: translateY(14px);
   text-shadow: 0 6px 24px rgba(252, 250, 246, 0.88);
 }
 
 .invitation-card__name-line {
   display: block;
   width: 100%;
-  line-height: 0.82;
+  line-height: 0.78;
 }
 
 .invitation-card__name-line:first-child {
   text-align: left;
   transform: translateX(-0.16em);
-  line-height: 0.98;
-  padding-top: 0.04em;
 }
 
 .invitation-card__name-line--ampersand {
@@ -994,6 +992,7 @@ body::before {
 
   .invitation-card__names {
     font-size: clamp(2.6rem, 8.6vw, 3.5rem);
+    transform: translateY(8px);
   }
 
   .invitation-card__couple-image {
@@ -1240,6 +1239,7 @@ body::before {
 
   .invitation-card__names {
     font-size: 1.9rem;
+    transform: translateY(8px);
   }
 
   .invitation-card__message {
