@@ -60,6 +60,14 @@
 
   const pad = (value, size = 2) => String(value).padStart(size, "0");
 
+  const updateAppHeight = () => {
+    root.style.setProperty("--app-height", `${window.innerHeight}px`);
+  };
+
+  updateAppHeight();
+  window.addEventListener("resize", updateAppHeight);
+  window.addEventListener("orientationchange", updateAppHeight);
+
   const updateCountdown = () => {
     if (!countdownValue || !config.event.dateIso) {
       return;

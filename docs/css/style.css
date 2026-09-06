@@ -1,4 +1,5 @@
 :root {
+  --app-height: 100dvh;
   --monogram-image: url("../assets/images/monograma-novo-clean.png");
   --color-olive: #68724e;
   --color-olive-deep: #485439;
@@ -1005,6 +1006,7 @@ body::before {
 
 @media (max-width: 600px) {
   .page-shell {
+    min-height: var(--app-height);
     padding: 12px;
   }
 
@@ -1045,14 +1047,27 @@ body::before {
   }
 
   .invitation {
-    height: auto;
-    min-height: calc(100dvh - 24px);
-    align-items: start;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: calc(var(--app-height) - 24px);
+    min-height: calc(var(--app-height) - 24px);
+    width: 100%;
+  }
+
+  .is-ready .invitation {
+    display: flex;
+  }
+
+  .invitation > * {
+    width: 100%;
+    max-width: 620px;
   }
 
   .invitation-card {
-    height: auto;
-    min-height: 0;
+    height: calc(var(--app-height) - 24px);
+    min-height: calc(var(--app-height) - 24px);
+    max-height: none;
     border-radius: 28px;
     background:
       repeating-linear-gradient(0deg, rgba(198, 190, 174, 0.082) 0 1px, rgba(250, 247, 241, 0) 1px 4px),
@@ -1069,10 +1084,11 @@ body::before {
   }
 
   .invitation-card__content {
-    height: auto;
-    justify-content: flex-start;
-    gap: 2px;
-    padding: 8px 12px 12px;
+    height: 100%;
+    min-height: 100%;
+    justify-content: space-between;
+    gap: 0;
+    padding: 8px 12px 10px;
     margin-top: 0;
   }
 
@@ -1119,17 +1135,17 @@ body::before {
   }
 
   .invitation-card__hero-media {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 
   .invitation-card__countdown {
-    margin-top: 1px;
-    margin-bottom: 0;
+    margin-top: 3px;
+    margin-bottom: 2px;
   }
 
   .invitation-card__footer-group {
-    margin-top: 4px !important;
+    margin-top: 0 !important;
     gap: 4px;
   }
 
@@ -1170,7 +1186,7 @@ body::before {
 
   .actions {
     gap: 4px;
-    margin-top: 2px;
+    margin-top: 3px;
   }
 
   .button {
@@ -1178,81 +1194,6 @@ body::before {
     padding: 7px 8px;
     font-size: 0.74rem;
     letter-spacing: 0.04em;
-  }
-}
-
-@media (max-width: 600px) and (min-height: 860px) {
-  .invitation {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    height: calc(100dvh - 24px);
-    min-height: calc(100dvh - 24px);
-    width: 100%;
-  }
-
-  .is-ready .invitation {
-    display: flex;
-  }
-
-  .invitation > * {
-    width: 100%;
-    max-width: 620px;
-  }
-
-  .invitation-card {
-    height: auto;
-    min-height: calc(100dvh - 24px);
-    max-height: none;
-  }
-
-  .invitation-card__content {
-    min-height: 100%;
-    height: 100%;
-    padding: 10px 12px 14px;
-  }
-
-  .invitation-card__footer-group {
-    margin-top: auto !important;
-    padding-bottom: 2px;
-    gap: 6px;
-  }
-
-  .actions {
-    gap: 6px;
-    margin-top: 4px;
-  }
-
-  .details-grid {
-    gap: 6px;
-  }
-
-  .button {
-    min-height: 38px;
-  }
-
-  .invitation-card__visual {
-    height: clamp(148px, 23dvh, 188px);
-  }
-
-  .invitation-card__hero-media {
-    margin-top: 2px;
-  }
-
-  .invitation-card__countdown {
-    margin-top: 4px;
-    margin-bottom: 2px;
-  }
-}
-
-@media (max-width: 600px) and (min-height: 860px) and (-webkit-touch-callout: none) {
-  .invitation,
-  .invitation-card {
-    min-height: calc(100vh - 24px);
-  }
-
-  .invitation-card__content {
-    min-height: calc(100vh - 24px);
   }
 }
 
