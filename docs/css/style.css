@@ -1128,6 +1128,101 @@ body::before {
   }
 }
 
+@media (max-height: 860px) and (min-width: 640px) {
+  .invitation-card__visual {
+    height: clamp(148px, 25dvh, 210px);
+  }
+
+  .invitation-card__content {
+    padding: 10px 18px 10px;
+    margin-top: 4px;
+  }
+
+  .invitation-card__names {
+    font-size: clamp(2.7rem, 8vw, 4rem);
+  }
+
+  .invitation-card__message {
+    font-size: 0.68rem;
+    line-height: 1.08;
+  }
+
+  .invitation-card__couple-image {
+    width: min(24vw, 104px);
+  }
+
+  .invitation-card__countdown {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .invitation-card__countdown-label {
+    font-size: 0.5rem;
+  }
+
+  .invitation-card__countdown-ticker {
+    gap: 6px;
+  }
+
+  .invitation-card__countdown-part {
+    padding: 6px 5px;
+    border-radius: 16px;
+  }
+
+  .invitation-card__countdown-number {
+    font-size: 1rem;
+  }
+
+  .invitation-card__countdown-unit {
+    font-size: 0.42rem;
+  }
+
+  .invitation-card__footer-group {
+    gap: 6px;
+  }
+
+  .details-grid {
+    gap: 10px;
+  }
+
+  .detail-card {
+    min-height: 5.8rem;
+  }
+
+  .detail-card__label {
+    font-size: 0.66rem;
+    margin-bottom: 0.26rem;
+  }
+
+  .detail-card__value {
+    font-size: clamp(1rem, 2.8vw, 1.32rem);
+  }
+
+  .detail-card__support {
+    font-size: 0.78rem;
+    line-height: 1.18;
+  }
+
+  .detail-card--date-time .detail-card__support {
+    font-size: 1rem;
+  }
+
+  .detail-card--location .detail-card__support {
+    font-size: 0.7rem;
+  }
+
+  .actions {
+    gap: 6px;
+  }
+
+  .button {
+    min-height: 36px;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+  }
+}
+
 @keyframes flapTopOpenMobile {
   0% { transform: perspective(1000px) rotateX(0deg) translateY(0) translateZ(0); opacity: 1; }
   18% { transform: perspective(1000px) rotateX(5deg) translateY(-1px) translateZ(0); opacity: 1; }
