@@ -1045,11 +1045,14 @@ body::before {
   }
 
   .invitation {
-    height: calc(100dvh - 24px);
+    height: auto;
+    min-height: calc(100dvh - 24px);
+    align-items: start;
   }
 
   .invitation-card {
-    height: calc(100dvh - 24px);
+    height: auto;
+    min-height: 0;
     border-radius: 28px;
     background:
       repeating-linear-gradient(0deg, rgba(198, 190, 174, 0.082) 0 1px, rgba(250, 247, 241, 0) 1px 4px),
@@ -1062,19 +1065,26 @@ body::before {
   }
 
   .invitation-card__visual {
-    height: clamp(148px, 24dvh, 196px);
+    height: clamp(134px, 21dvh, 172px);
   }
 
   .invitation-card__content {
-    height: 100%;
+    height: auto;
     justify-content: flex-start;
-    gap: 3px;
-    padding: 10px 14px 10px;
+    gap: 2px;
+    padding: 8px 12px 12px;
+    margin-top: 0;
+  }
+
+  .invitation-card__names {
+    width: min(100%, 8.4ch);
+    font-size: clamp(2.7rem, 12vw, 3.7rem);
+    margin-bottom: 0.14em;
   }
 
   .invitation-card__message {
-    font-size: 0.66rem;
-    line-height: 1.08;
+    font-size: 0.62rem;
+    line-height: 1.02;
     margin: 0;
   }
 
@@ -1082,38 +1092,126 @@ body::before {
     font-size: 0.92rem;
   }
 
+  .invitation-card__countdown-label {
+    font-size: 0.5rem;
+  }
+
   .invitation-card__countdown-ticker {
-    gap: 6px;
+    gap: 4px;
   }
 
   .invitation-card__countdown-part {
-    padding: 7px 4px;
+    padding: 5px 3px;
+    border-radius: 14px;
   }
 
   .invitation-card__countdown-number {
-    font-size: 0.94rem;
+    font-size: 0.88rem;
   }
 
   .invitation-card__countdown-unit {
-    font-size: 0.42rem;
+    font-size: 0.38rem;
+    letter-spacing: 0.08em;
   }
 
   .invitation-card__couple-image {
-    width: min(28vw, 96px);
+    width: min(25vw, 86px);
   }
 
   .invitation-card__hero-media {
-    margin-top: 0.14em;
-    margin-bottom: 0.08em;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .invitation-card__countdown {
+    margin-top: 1px;
+    margin-bottom: 0;
+  }
+
+  .invitation-card__footer-group {
+    margin-top: 4px !important;
+    gap: 4px;
+  }
+
+  .details-grid {
+    gap: 4px;
+    align-items: start;
+  }
+
+  .detail-card {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .detail-card__label {
+    font-size: 0.58rem;
+    margin-bottom: 0.14rem;
+  }
+
+  .detail-card__value {
+    font-size: clamp(1rem, 5.4vw, 1.34rem);
+    margin-bottom: 0.14rem;
+  }
+
+  .detail-card__support {
+    font-size: 0.66rem;
+    line-height: 1.08;
+    max-width: 16ch;
+  }
+
+  .detail-card--date-time .detail-card__support {
+    font-size: 0.9rem;
+  }
+
+  .detail-card--location .detail-card__support {
+    font-size: 0.62rem;
+    max-width: 15ch;
+  }
+
+  .actions {
+    gap: 4px;
     margin-top: 2px;
+  }
+
+  .button {
+    min-height: 36px;
+    padding: 7px 8px;
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (max-width: 600px) and (min-height: 860px) {
+  .invitation {
+    height: calc(100dvh - 24px);
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  .invitation-card {
+    height: calc(100dvh - 24px);
+  }
+
+  .invitation-card__visual {
+    height: clamp(148px, 23dvh, 188px);
+  }
+
+  .invitation-card__content {
+    height: 100%;
+    padding: 10px 12px 12px;
+  }
+
+  .invitation-card__hero-media {
+    margin-top: 2px;
+  }
+
+  .invitation-card__countdown {
+    margin-top: 4px;
     margin-bottom: 2px;
   }
 
   .invitation-card__footer-group {
-    margin-top: auto;
+    margin-top: auto !important;
     gap: 6px;
   }
 
@@ -1121,38 +1219,9 @@ body::before {
     gap: 6px;
   }
 
-  .detail-card {
-    min-height: 5.7rem;
-    padding: 0;
-  }
-
-  .detail-card__label {
-    font-size: 0.62rem;
-    margin-bottom: 0.22rem;
-  }
-
-  .detail-card__support {
-    font-size: 0.76rem;
-    line-height: 1.14;
-  }
-
-  .detail-card--date-time .detail-card__support {
-    font-size: 0.98rem;
-  }
-
-  .detail-card--location .detail-card__support {
-    font-size: 0.68rem;
-  }
-
   .actions {
     gap: 6px;
-  }
-
-  .button {
-    min-height: 40px;
-    padding: 8px 10px;
-    font-size: 0.84rem;
-    letter-spacing: 0.05em;
+    margin-top: 4px;
   }
 }
 
@@ -1297,7 +1366,7 @@ body::before {
   100% { transform: rotateX(116deg) translateZ(0); opacity: 0; }
 }
 
-@media (max-height: 760px) {
+@media (max-height: 760px) and (min-width: 640px) {
   .opening__seal {
     width: min(24vw, 100px);
   }
