@@ -622,7 +622,7 @@ body::before {
   position: relative;
   z-index: 3;
   overflow: visible;
-  transform: translateY(14px);
+  transform: translateY(20px);
   text-shadow: 0 6px 24px rgba(252, 250, 246, 0.88);
 }
 
@@ -966,6 +966,10 @@ body::before {
   .invitation-card__content {
     padding: 34px 34px 28px;
     height: 100%;
+  }
+
+  .invitation-card__names {
+    transform: translateY(24px);
   }
 
   .actions {
