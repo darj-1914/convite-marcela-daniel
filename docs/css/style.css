@@ -585,10 +585,10 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   text-align: center;
   gap: 3px;
-  padding: 28px 18px 14px;
+  padding: 16px 18px 14px;
   margin-top: 10px;
   height: 100%;
   z-index: 2;
@@ -622,7 +622,6 @@ body::before {
   position: relative;
   z-index: 3;
   overflow: visible;
-  transform: translateY(20px);
   text-shadow: 0 6px 24px rgba(252, 250, 246, 0.88);
 }
 
@@ -746,7 +745,7 @@ body::before {
 
 .invitation-card__footer-group {
   width: 100%;
-  margin-top: 1px;
+  margin-top: auto;
   display: grid;
   gap: 8px;
   position: relative;
@@ -964,12 +963,8 @@ body::before {
   }
 
   .invitation-card__content {
-    padding: 34px 34px 28px;
+    padding: 20px 34px 28px;
     height: 100%;
-  }
-
-  .invitation-card__names {
-    transform: translateY(24px);
   }
 
   .actions {
@@ -991,12 +986,11 @@ body::before {
   }
 
   .invitation-card__content {
-    padding: 20px 16px 10px;
+    padding: 14px 16px 10px;
   }
 
   .invitation-card__names {
     font-size: clamp(2.6rem, 8.6vw, 3.5rem);
-    transform: translateY(8px);
   }
 
   .invitation-card__couple-image {
@@ -1073,9 +1067,9 @@ body::before {
 
   .invitation-card__content {
     height: 100%;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 3px;
-    padding: 18px 14px 12px;
+    padding: 12px 14px 12px;
   }
 
   .invitation-card__message {
@@ -1186,7 +1180,7 @@ body::before {
 
   .invitation-card__content {
     height: 100%;
-    padding-top: 20px;
+    padding-top: 12px;
   }
 
   .detail-card {
@@ -1237,13 +1231,12 @@ body::before {
   .invitation-card__content {
     justify-content: flex-start;
     gap: 3px;
-    padding: 18px 14px 8px;
+    padding: 10px 14px 8px;
     height: 100%;
   }
 
   .invitation-card__names {
     font-size: 1.9rem;
-    transform: translateY(8px);
   }
 
   .invitation-card__message {
