@@ -1062,19 +1062,19 @@ body::before {
   }
 
   .invitation-card__visual {
-    height: clamp(160px, 28dvh, 220px);
+    height: clamp(148px, 24dvh, 196px);
   }
 
   .invitation-card__content {
     height: 100%;
     justify-content: flex-start;
     gap: 3px;
-    padding: 12px 14px 12px;
+    padding: 10px 14px 10px;
   }
 
   .invitation-card__message {
-    font-size: 0.68rem;
-    line-height: 1.14;
+    font-size: 0.66rem;
+    line-height: 1.08;
     margin: 0;
   }
 
@@ -1099,32 +1099,60 @@ body::before {
   }
 
   .invitation-card__couple-image {
-    width: min(30vw, 108px);
+    width: min(28vw, 96px);
   }
 
   .invitation-card__hero-media {
-    margin-top: 0.24em;
+    margin-top: 0.14em;
+    margin-bottom: 0.08em;
+  }
+
+  .invitation-card__countdown {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .invitation-card__footer-group {
+    margin-top: 4px;
+    gap: 6px;
   }
 
   .details-grid {
-    gap: 8px;
+    gap: 6px;
   }
 
   .detail-card {
-    min-height: 6.3rem;
+    min-height: 5.7rem;
     padding: 0;
   }
 
   .detail-card__label {
-    font-size: 0.66rem;
+    font-size: 0.62rem;
+    margin-bottom: 0.22rem;
   }
 
   .detail-card__support {
-    font-size: 0.82rem;
+    font-size: 0.76rem;
+    line-height: 1.14;
   }
 
   .detail-card--date-time .detail-card__support {
-    font-size: 1.08rem;
+    font-size: 0.98rem;
+  }
+
+  .detail-card--location .detail-card__support {
+    font-size: 0.68rem;
+  }
+
+  .actions {
+    gap: 6px;
+  }
+
+  .button {
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 0.84rem;
+    letter-spacing: 0.05em;
   }
 }
 
