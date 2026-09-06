@@ -8,7 +8,9 @@
   const root = document.documentElement;
   const opening = document.getElementById("opening");
   const openInvitationButton = document.getElementById("openInvitation");
+  const backgroundAudio = document.getElementById("backgroundAudio");
   let isOpening = false;
+  let isStartingAudio = false;
   document.body.classList.remove("is-ready");
   const toAbsoluteAssetUrl = (src) => new URL(src, window.location.href).href;
   const groom = config.couple.groom || "";
@@ -144,6 +146,15 @@
     root.style.setProperty("--monogram-image", `url("${toAbsoluteAssetUrl(config.visuals.monogramImage)}")`);
   }
 
+  if (backgroundAudio && config.audio?.backgroundMusic) {
+    backgroundAudio.src = toAbsoluteAssetUrl(config.audio.backgroundMusic);
+    backgroundAudio.loop = config.audio.loop !== false;
+
+    if (typeof config.audio.volume === "number") {
+      backgroundAudio.volume = Math.min(1, Math.max(0, config.audio.volume));
+    }
+  }
+
   const paletteMap = {
     olive: "--color-olive",
     oliveDeep: "--color-olive-deep",
@@ -163,11 +174,33 @@
     }
   });
 
+  const startBackgroundAudio = () => {
+    if (!backgroundAudio || !backgroundAudio.getAttribute("src") || isStartingAudio) {
+      return;
+    }
+
+    isStartingAudio = true;
+
+    const playPromise = backgroundAudio.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {
+        isStartingAudio = false;
+      });
+      playPromise.then(() => {
+        isStartingAudio = false;
+      });
+      return;
+    }
+
+    isStartingAudio = false;
+  };
+
   const openInvitation = () => {
     if (!opening || opening.classList.contains("is-open") || isOpening) {
       return;
     }
 
+    startBackgroundAudio();
     isOpening = true;
     opening.classList.add("is-opening");
 

@@ -39,6 +39,16 @@ const wedding = {
     pierImage: "./assets/images/pier31.png",
     coupleImage: "./assets/images/casal-clean.png"
   },
+  audio: {
+    /*
+      Para ativar a musica, coloque um arquivo em docs/assets/audio/
+      e informe o caminho abaixo, por exemplo:
+      "./assets/audio/musica.mp3"
+    */
+    backgroundMusic: "",
+    loop: true,
+    volume: 0.55
+  },
   palette: {
     olive: "#68724e",
     oliveDeep: "#485439",
