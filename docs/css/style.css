@@ -665,7 +665,7 @@ body::before {
 
 .invitation-card__message {
   max-width: none;
-  margin: 0;
+  margin: 0.32rem 0 0;
   color: rgba(47, 52, 41, 0.84);
   font-family: "Cinzel", var(--font-body);
   font-size: 0.74rem;
@@ -1260,6 +1260,10 @@ body::before {
 
   .invitation-card__content {
     padding-top: 48px;
+  }
+
+  .invitation-card__message {
+    margin-top: 0.78rem;
   }
 
   .invitation-card__names {
