@@ -575,7 +575,8 @@ body::before {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(252, 250, 246, 0.02) 0%, rgba(252, 250, 246, 0.08) 20%, rgba(252, 250, 246, 0.46) 50%, rgba(247, 243, 236, 0.9) 100%);
+    radial-gradient(circle at 50% 16%, rgba(252, 250, 246, 0.78) 0%, rgba(252, 250, 246, 0.54) 24%, rgba(252, 250, 246, 0.14) 48%, transparent 68%),
+    linear-gradient(180deg, rgba(252, 250, 246, 0.14) 0%, rgba(252, 250, 246, 0.16) 20%, rgba(252, 250, 246, 0.5) 50%, rgba(247, 243, 236, 0.9) 100%);
   pointer-events: none;
 }
 
@@ -623,7 +624,19 @@ body::before {
   position: relative;
   z-index: 3;
   overflow: visible;
-  text-shadow: 0 6px 24px rgba(252, 250, 246, 0.88);
+  text-shadow:
+    0 3px 10px rgba(252, 250, 246, 0.98),
+    0 8px 24px rgba(252, 250, 246, 0.88);
+}
+
+.invitation-card__names::before {
+  content: "";
+  position: absolute;
+  inset: -0.14em -0.34em -0.1em;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(252, 250, 246, 0.84) 0%, rgba(252, 250, 246, 0.56) 58%, rgba(252, 250, 246, 0) 100%);
+  filter: blur(8px);
+  z-index: -1;
 }
 
 .invitation-card__name-line {
@@ -653,13 +666,24 @@ body::before {
 .invitation-card__message {
   max-width: none;
   margin: 0;
-  color: rgba(47, 52, 41, 0.74);
+  color: rgba(47, 52, 41, 0.84);
   font-family: "Cinzel", var(--font-body);
   font-size: 0.74rem;
   line-height: 1.16;
   white-space: pre-line;
   position: relative;
   z-index: 3;
+  text-shadow: 0 2px 10px rgba(252, 250, 246, 0.96);
+}
+
+.invitation-card__message::before {
+  content: "";
+  position: absolute;
+  inset: -0.3em -0.7em;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(252, 250, 246, 0.8) 0%, rgba(252, 250, 246, 0.42) 62%, rgba(252, 250, 246, 0) 100%);
+  filter: blur(6px);
+  z-index: -1;
 }
 
 .invitation-card__couple-image {
