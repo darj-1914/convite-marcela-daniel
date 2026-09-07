@@ -1016,6 +1016,11 @@ body::before {
 
   .invitation-card__names {
     font-size: clamp(2.6rem, 8.6vw, 3.5rem);
+    margin-bottom: 0.78rem;
+  }
+
+  .invitation-card__message {
+    margin-top: 0.96rem;
   }
 
   .invitation-card__couple-image {
@@ -1123,7 +1128,7 @@ body::before {
     width: min(100%, 7.8ch);
     font-size: clamp(2.45rem, 9.8vw, 3.35rem);
     margin-top: 12px;
-    margin-bottom: 0.08em;
+    margin-bottom: 0.42rem;
   }
 
   .invitation-card__name-line {
@@ -1144,7 +1149,7 @@ body::before {
     max-width: 30ch;
     font-size: 0.6rem;
     line-height: 1.05;
-    margin: 0;
+    margin: 0.72rem 0 0;
   }
 
   .invitation-card__countdown-value {
@@ -1263,12 +1268,13 @@ body::before {
   }
 
   .invitation-card__message {
-    margin-top: 0.78rem;
+    margin-top: 0.94rem;
   }
 
   .invitation-card__names {
     margin-top: 18px;
     font-size: clamp(2.6rem, 10vw, 3.5rem);
+    margin-bottom: 0.56rem;
   }
 
   .invitation-card__hero-media {
