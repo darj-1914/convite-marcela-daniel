@@ -6,6 +6,7 @@
   }
 
   const root = document.documentElement;
+  const params = new URLSearchParams(window.location.search);
   const opening = document.getElementById("opening");
   const openInvitationButton = document.getElementById("openInvitation");
   const backgroundAudio = document.getElementById("backgroundAudio");
@@ -233,4 +234,8 @@
       openInvitation();
     }
   });
+
+  if (params.get("preview") === "open") {
+    window.setTimeout(openInvitation, 0);
+  }
 })();

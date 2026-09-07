@@ -1080,27 +1080,46 @@ body::before {
   }
 
   .invitation-card__visual {
-    height: clamp(134px, 21dvh, 172px);
+    height: clamp(220px, 30dvh, 280px);
   }
 
   .invitation-card__content {
     height: 100%;
     min-height: 100%;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     gap: 0;
-    padding: 8px 12px 10px;
+    padding: 24px 12px 10px;
     margin-top: 0;
   }
 
   .invitation-card__names {
-    width: min(100%, 8.4ch);
-    font-size: clamp(2.7rem, 12vw, 3.7rem);
-    margin-bottom: 0.14em;
+    width: min(100%, 7.8ch);
+    font-size: clamp(2.45rem, 9.8vw, 3.35rem);
+    margin-top: 12px;
+    margin-bottom: 0.08em;
+  }
+
+  .invitation-card__name-line {
+    line-height: 0.86;
+  }
+
+  .invitation-card__name-line--ampersand {
+    margin-block: 0.02em 0.02em;
+  }
+
+  .invitation-card__name-line:first-child,
+  .invitation-card__name-line:last-child {
+    text-align: center;
+    transform: none;
   }
 
   .invitation-card__message {
-    font-size: 0.62rem;
-    line-height: 1.02;
+    max-width: 30ch;
+    font-size: 0.6rem;
+    line-height: 1.05;
     margin: 0;
   }
 
@@ -1131,22 +1150,25 @@ body::before {
   }
 
   .invitation-card__couple-image {
-    width: min(25vw, 86px);
+    width: min(41vw, 166px);
   }
 
   .invitation-card__hero-media {
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-top: 16px;
+    margin-bottom: 14px;
   }
 
   .invitation-card__countdown {
-    margin-top: 3px;
+    margin-top: 0;
     margin-bottom: 2px;
   }
 
   .invitation-card__footer-group {
-    margin-top: 0 !important;
-    gap: 4px;
+    width: 100%;
+    display: grid;
+    margin-top: 34px !important;
+    gap: 8px;
+    align-self: stretch;
   }
 
   .details-grid {
@@ -1186,14 +1208,48 @@ body::before {
 
   .actions {
     gap: 4px;
-    margin-top: 3px;
+    margin-top: 8px;
   }
 
   .button {
-    min-height: 36px;
+    min-height: 40px;
     padding: 7px 8px;
     font-size: 0.74rem;
     letter-spacing: 0.04em;
+  }
+}
+
+@media (max-width: 600px) and (min-height: 860px) {
+  .invitation {
+    height: calc(var(--app-height) - 84px);
+    min-height: calc(var(--app-height) - 84px);
+  }
+
+  .invitation-card {
+    height: calc(var(--app-height) - 84px);
+    min-height: calc(var(--app-height) - 84px);
+  }
+
+  .invitation-card__visual {
+    height: clamp(246px, 33dvh, 320px);
+  }
+
+  .invitation-card__content {
+    padding-top: 48px;
+  }
+
+  .invitation-card__names {
+    margin-top: 18px;
+    font-size: clamp(2.6rem, 10vw, 3.5rem);
+  }
+
+  .invitation-card__hero-media {
+    margin-top: 18px;
+    margin-bottom: 20px;
+  }
+
+  .invitation-card__couple-image {
+    width: min(45vw, 196px);
   }
 }
 
