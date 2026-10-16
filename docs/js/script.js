@@ -9,6 +9,7 @@
   const params = new URLSearchParams(window.location.search);
   const opening = document.getElementById("opening");
   const openInvitationButton = document.getElementById("openInvitation");
+  const pageShell = document.querySelector(".page-shell");
   const backgroundAudio = document.getElementById("backgroundAudio");
   let isOpening = false;
   let isStartingAudio = false;
@@ -237,5 +238,24 @@
 
   if (params.get("preview") === "open") {
     window.setTimeout(openInvitation, 0);
+  }
+
+  if (params.get("scroll") === "bottom") {
+    window.setTimeout(() => {
+      pageShell?.scrollTo({ top: pageShell.scrollHeight, behavior: "auto" });
+      window.scrollTo(0, document.documentElement.scrollHeight);
+    }, 3200);
+  }
+
+  if (params.get("metrics") === "1") {
+    window.setTimeout(() => {
+      const pageShellStyles = pageShell ? window.getComputedStyle(pageShell) : null;
+      root.dataset.pageShellClientHeight = pageShell ? String(pageShell.clientHeight) : "";
+      root.dataset.pageShellScrollHeight = pageShell ? String(pageShell.scrollHeight) : "";
+      root.dataset.pageShellOverflowY = pageShellStyles?.overflowY || "";
+      root.dataset.bodyClientHeight = String(document.documentElement.clientHeight);
+      root.dataset.bodyScrollHeight = String(document.documentElement.scrollHeight);
+      root.dataset.bodyOverflowY = window.getComputedStyle(document.body).overflowY;
+    }, 3400);
   }
 })();

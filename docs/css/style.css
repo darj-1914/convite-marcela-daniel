@@ -1034,8 +1034,24 @@ body::before {
 }
 
 @media (max-width: 600px) {
+  html,
+  body {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body.is-ready {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   .page-shell {
     min-height: var(--app-height);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
     padding: 12px;
   }
 
@@ -1078,10 +1094,11 @@ body::before {
   .invitation {
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    height: calc(var(--app-height) - 24px);
+    align-items: flex-start;
+    height: auto;
     min-height: calc(var(--app-height) - 24px);
     width: 100%;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
   }
 
   .is-ready .invitation {
@@ -1094,7 +1111,7 @@ body::before {
   }
 
   .invitation-card {
-    height: calc(var(--app-height) - 24px);
+    height: auto;
     min-height: calc(var(--app-height) - 24px);
     max-height: none;
     border-radius: 28px;
@@ -1113,14 +1130,14 @@ body::before {
   }
 
   .invitation-card__content {
-    height: 100%;
+    height: auto;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     gap: 0;
-    padding: 24px 12px 10px;
+    padding: 24px 12px max(14px, env(safe-area-inset-bottom));
     margin-top: 0;
   }
 
@@ -1250,12 +1267,12 @@ body::before {
 
 @media (max-width: 600px) and (min-height: 860px) {
   .invitation {
-    height: calc(var(--app-height) - 84px);
+    height: auto;
     min-height: calc(var(--app-height) - 84px);
   }
 
   .invitation-card {
-    height: calc(var(--app-height) - 84px);
+    height: auto;
     min-height: calc(var(--app-height) - 84px);
   }
 
